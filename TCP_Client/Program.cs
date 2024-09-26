@@ -28,16 +28,16 @@ class Client
 
     static void ReceiveMessages(object obj)
     {
-        NetworkStream stream = (NetworkStream)obj; //
-        byte[] buffer = new byte[1024]; //
+        NetworkStream stream = (NetworkStream)obj; //Класът NetworkStream предоставя методи за изпращане и получаване на данни през Stream сокети в режим на блокиране
+        byte[] buffer = new byte[1024]; //четене на файла в буфер от 1024 байта
         int bytesRead; //
 
         while (true)
         {
             try
             {
-                bytesRead = stream.Read(buffer, 0, buffer.Length); //
-                if (bytesRead == 0) //
+                bytesRead = stream.Read(buffer, 0, buffer.Length); //Общият брой байтове, прочетени в буфера.
+                if (bytesRead == 0) //Връща 0
                 {
                     break;
                 }
