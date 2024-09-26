@@ -30,7 +30,7 @@ class Client
     {
         NetworkStream stream = (NetworkStream)obj; //Прави нов сокет 
         byte[] buffer = new byte[1024]; //четене на файла в буфер от 1024 байта
-        int bytesRead; //
+        int bytesRead; //променлива за цикъла долу 
         
 
         while (true)
