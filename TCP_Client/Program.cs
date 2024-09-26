@@ -15,8 +15,8 @@ class Client
 
         NetworkStream stream = client.GetStream(); //връща NetworkStream, който може да се използва за изпращане и получаване на данни
 
-        Thread receiveThread = new Thread(ReceiveMessages); // 
-        receiveThread.Start(stream); //
+        Thread receiveThread = new Thread(ReceiveMessages); // Прави нова нишка
+        receiveThread.Start(stream); //Кара нишката да започне изпълнение
 
         while (true)
         {
@@ -28,9 +28,10 @@ class Client
 
     static void ReceiveMessages(object obj)
     {
-        NetworkStream stream = (NetworkStream)obj; //Класът NetworkStream предоставя методи за изпращане и получаване на данни през Stream сокети в режим на блокиране
+        NetworkStream stream = (NetworkStream)obj; //Прави нов сокет 
         byte[] buffer = new byte[1024]; //четене на файла в буфер от 1024 байта
         int bytesRead; //
+        
 
         while (true)
         {
