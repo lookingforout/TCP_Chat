@@ -16,7 +16,7 @@ class Client
         NetworkStream stream = client.GetStream(); //връща NetworkStream, който може да се използва за изпращане и получаване на данни
 
         Thread receiveThread = new Thread(ReceiveMessages); // 
-        receiveThread.Start(stream); 
+        receiveThread.Start(stream); //
 
         while (true)
         {
@@ -42,7 +42,7 @@ class Client
                     break;
                 }
 
-                string message = Encoding.ASCII.GetString(buffer, 0, bytesRead); //
+                string message = Encoding.ASCII.GetString(buffer, 0, bytesRead); //определя колко байта водят до кодиране на набор от Unicode знаци
                 Console.WriteLine(message);
             }
             catch (Exception)
